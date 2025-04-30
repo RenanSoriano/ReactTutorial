@@ -1,11 +1,10 @@
-import { FC } from 'react';
 import FormComponent from './components/FormComponent';
 
 interface AppProperties {
   title: string;
 }
 
-const App: FC<AppProperties> = ({ title }) => {
+export default function App  ({ title }: AppProperties) {
   return (
     <div>
       <h1>{title}</h1>
@@ -14,4 +13,4 @@ const App: FC<AppProperties> = ({ title }) => {
   );
 };
 
-export default App;
+
