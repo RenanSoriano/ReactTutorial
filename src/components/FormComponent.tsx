@@ -10,15 +10,17 @@ interface FormData {
 //   email
 // }:FormData){
 export default function FormComponent() {
-  const [formData, setFormData] = useState<FormData>({ name: '', email: '' });
+  const [formData, setFormData] = useState<FormData>({ name: '', email: '' });//array com objeto formData e função pra alterar formData, state typado 
+  //pra usar interface FormData e inicializado com um objeto vazio com as propriedades name e email
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => { //quando input digitado, atualiza o estado do form
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => { //param e do typado para gerenciar mudanças de evento no html input
+    //função fica escutndo para mudanças no input e mantém atualizado o estado do form de acordo com input do usuario
+    const { name, value } = e.target;//pega o nome e valor do input que foi alterado
+    setFormData({ ...formData, [name]: value });//passa o nome e valor do input alterado para o formData
   };
 
-  const handleSubmit = (e: React.FormEvent) => { //quando input enviado, mostra popup
-    e.preventDefault();
+  const handleSubmit = () => { //quando input enviado, mostra popup
+    // e.preventDefault(); tirei isso aqui pra que o form resete quando enviado
     alert(`Name: ${formData.name}, Email: ${formData.email}`); //popup mostrando os dados do form
   };
 
