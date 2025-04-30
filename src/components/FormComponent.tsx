@@ -9,7 +9,7 @@ interface FormData {
 //   name,
 //   email
 // }:FormData){
-function FormComponent() {
+export default function FormComponent() {
   const [formData, setFormData] = useState<FormData>({ name: '', email: '' });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => { //quando input digitado, atualiza o estado do form
@@ -50,4 +50,4 @@ function FormComponent() {
     </form>
   );
 // };
-} export default FormComponent;
+} 
